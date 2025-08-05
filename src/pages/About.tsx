@@ -59,10 +59,7 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                At XURO, we believe that exceptional digital experiences are born from the perfect fusion 
-                of creativity, technology, and human insight. We don't just build websites and applications—we 
-                craft immersive journeys that captivate, inspire, and drive meaningful connections between 
-                brands and their audiences.
+                At XURO, we don’t just design,we engineer emotion. Blending creativity, code, and human instinct, we craft digital experiences that don’t just look good, but feel unforgettable. Every click, scroll, and interaction is a chance to spark connection, build trust, and turn brands into stories people remember.
               </motion.p>
             </div>
           </div>

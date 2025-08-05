@@ -28,19 +28,19 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: 'Email',
-      value: 'hello@xuro.agency',
+      value: 'xuroglobal@gmail.com',
       href: 'mailto:hello@xuro.agency',
     },
     {
       icon: <Phone className="w-6 h-6" />,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+91 8122016648',
+      href: 'tel:+915551234567',
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Chennai, India',
       href: '#',
     },
   ];
