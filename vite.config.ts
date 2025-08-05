@@ -7,4 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+   server: {
+    open: true, // ✅ This will auto-open the browser when you run `npm run dev`
+  },
 });
