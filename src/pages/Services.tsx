@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ServiceCard from '../components/ServiceCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Service } from '../types';
+import logoImg from '../assets/logo-design.png';
 
 const Services: React.FC = () => {
   const servicesRef = useScrollAnimation();
@@ -13,6 +14,7 @@ const Services: React.FC = () => {
       title: 'Logo Design',
       description: 'Memorable brand identities that make lasting impressions',
       icon: '🎯',
+      
       gradient: 'from-blue-500 to-cyan-500',
     },
     {

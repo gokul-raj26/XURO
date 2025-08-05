@@ -1,7 +1,7 @@
 export const teamMembers = [
   {
     id: '1',
-    name: 'Alex Rivera',
+    name: 'Gokul Raj',
     role: 'Creative Director',
     bio: 'Visionary leader with 10+ years in digital design and brand strategy.',
     avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
@@ -14,7 +14,7 @@ export const teamMembers = [
   },
   {
     id: '2',
-    name: 'Maya Chen',
+    name: 'Jayashree',
     role: 'Lead Developer',
     bio: 'Full-stack engineer specializing in immersive web experiences and performance optimization.',
     avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
@@ -40,7 +40,7 @@ export const teamMembers = [
   },
   {
     id: '4',
-    name: 'Sam Torres',
+    name: 'Divakar',
     role: 'Motion Designer',
     bio: 'Animation specialist bringing static designs to life with fluid, purposeful motion.',
     avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
