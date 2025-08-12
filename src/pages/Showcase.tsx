@@ -18,16 +18,18 @@ const Showcase: React.FC = () => {
       description: 'A modern e-commerce platform with advanced features and seamless user experience.',
       image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      link: '#',
+      link: 'https://gokul-raj26.github.io/Portfolio/#',
     },
-    {
-      id: '2',
-      title: 'Brand Identity System',
-      category: 'Logo Design',
-      description: 'Complete brand identity system for a tech startup including logo, colors, and guidelines.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tags: ['Branding', 'Logo', 'Identity', 'Guidelines'],
-    },
+    
+      {
+  id: '2',
+  title: 'Logo Design Showcase',
+  category: 'Logo Design',
+  description: 'A collection of various logo designs crafted for different brands, startups, and clients.',
+  image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+  tags: ['Branding', 'Logo', 'Portfolio', 'Designs'],
+  link: 'https://drive.google.com/drive/u/3/folders/18VzwR5b0rQzfdU-l3zCfvQy9tvGEC3fs',
+},
     {
       id: '3',
       title: 'Mobile Banking App',
