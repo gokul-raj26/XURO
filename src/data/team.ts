@@ -6,7 +6,7 @@ export const teamMembers = [
     bio: 'Visionary leader with 10+ years in digital design and brand strategy.',
     avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/gokulraj-gimzr/',
       twitter: '#',
       dribbble: '#',
     },
