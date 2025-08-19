@@ -4,7 +4,11 @@ import TestimonialCard from '../components/TestimonialCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { testimonials } from '../data/testimonials';
 
-const Testimonials: React.FC = () => {
+
+interface TestimonialsProps {
+  onNavigate: (page: string) => void;
+}
+const Testimonials: React.FC<TestimonialsProps> = ({ onNavigate }) => {
   const testimonialsRef = useScrollAnimation();
 
   return (
@@ -108,6 +112,7 @@ const Testimonials: React.FC = () => {
               </p>
               <motion.button
                 className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
+                 onClick={() => onNavigate('contact')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

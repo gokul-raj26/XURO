@@ -65,7 +65,7 @@ function App() {
       case 'showcase':
         return <Showcase />;
       case 'testimonials':
-        return <Testimonials />;
+        return <Testimonials onNavigate={handleNavigate} />;
       case 'contact':
         return <Contact />;
       default:
