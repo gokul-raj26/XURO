@@ -1,72 +1,77 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useCursor } from '../hooks/useCursor';
+// MultiCursor.tsx
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useEffect } from "react";
 
-const CustomCursor: React.FC = () => {
-  const { cursor } = useCursor();
+export default function MultiCursor() {
+  // Mouse position trackers
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Spring configs for smooth trailing effect
+  const fastSpring = { damping: 20, stiffness: 300 };   // Smallest + fastest
+  const mediumSpring = { damping: 40, stiffness: 200 }; // Medium
+  const slowSpring = { damping: 60, stiffness: 100 };   // Largest + slowest
+
+  // Apply springs for each cursor
+  const xFast = useSpring(mouseX, fastSpring);
+  const yFast = useSpring(mouseY, fastSpring);
+
+  const xMedium = useSpring(mouseX, mediumSpring);
+  const yMedium = useSpring(mouseY, mediumSpring);
+
+  const xSlow = useSpring(mouseX, slowSpring);
+  const ySlow = useSpring(mouseY, slowSpring);
+
+  // Update mouse position on move
+  useEffect(() => {
+    const move = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, [mouseX, mouseY]);
 
   return (
     <>
-      {/* Main cursor */}
+      {/* Fast cursor - smallest ring */}
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 w-4 h-4 border border-blue-500 rounded-full 
+                   pointer-events-none z-50 ring-glow"
         style={{
-          x: cursor.x - 8,
-          y: cursor.y - 8,
+          x: xFast,
+          y: yFast,
+          translateX: "-50%",
+          translateY: "-50%",
+          color: "#3b82f6", // matches Tailwind blue-500 (for glow color)
         }}
-        animate={{
-          scale: cursor.isClicking ? 0.8 : cursor.isHovering ? 1.5 : 1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-        }}
-      >
-        <div className="w-full h-full bg-white rounded-full" />
-      </motion.div>
+      />
 
-      {/* Trailing cursor */}
+      {/* Medium cursor - medium ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-40"
+        className="fixed top-0 left-0 w-6 h-6 border border-purple-400 rounded-full 
+                   opacity-70 pointer-events-none z-40 ring-glow"
         style={{
-          x: cursor.x - 16,
-          y: cursor.y - 16,
+          x: xMedium,
+          y: yMedium,
+          translateX: "-50%",
+          translateY: "-50%",
+          color: "#a855f7", // matches Tailwind purple-400
         }}
-        animate={{
-          scale: cursor.isHovering ? 1.2 : 1,
-          opacity: cursor.isHovering ? 0.6 : 0.3,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 20,
-        }}
-      >
-        <div className="w-full h-full border-2 border-blue-400 rounded-full blur-sm" />
-      </motion.div>
+      />
 
-      {/* Glow effect */}
+      {/* Slow cursor - largest ring */}
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 pointer-events-none z-30"
+        className="fixed top-0 left-0 w-8 h-8 border border-pink-400 rounded-full 
+                   opacity-50 pointer-events-none z-30 ring-glow"
         style={{
-          x: cursor.x - 24,
-          y: cursor.y - 24,
+          x: xSlow,
+          y: ySlow,
+          translateX: "-50%",
+          translateY: "-50%",
+          color: "#ec4899", // matches Tailwind pink-400
         }}
-        animate={{
-          scale: cursor.isHovering ? 1.5 : 1,
-          opacity: cursor.isHovering ? 0.4 : 0.1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 25,
-        }}
-      >
-        <div className="w-full h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-lg" />
-      </motion.div>
+      />
     </>
   );
-};
-
-export default CustomCursor;
+}

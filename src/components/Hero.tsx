@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         initial="hidden"
         animate="visible"
       >
-        {/* Floating Badge */}
+       {/* Floating Badge 
         <motion.div
           className="inline-flex items-center space-x-2 px-4 py-2 mb-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full"
           variants={textVariants}
@@ -53,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         >
           <Sparkles className="w-4 h-4 text-blue-400" />
           <span className="text-sm text-gray-300">Futuristic Digital Experiences</span>
-        </motion.div>
+        </motion.div> */}
 
         {/* Main Heading */}
         <motion.h1
@@ -115,7 +115,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator 
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
@@ -134,6 +134,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           />
         </motion.div>
       </motion.div>
+      */}
     </section>
   );
 };
