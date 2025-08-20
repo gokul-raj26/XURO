@@ -46,7 +46,7 @@ export default function MultiCursor() {
     <>
       {/* Fast cursor - smallest ring */}
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 border border-blue-500 rounded-full 
+        className="fixed top-0 left-0 w-4 h-4 border-8  border-blue-500 rounded-full 
                    pointer-events-none z-50 ring-glow"
         style={{
           x: xFast,
@@ -59,7 +59,7 @@ export default function MultiCursor() {
 
       {/* Medium cursor - medium ring */}
       <motion.div
-        className="fixed top-0 left-0 w-6 h-6 border border-purple-400 rounded-full 
+        className="fixed top-0 left-0 w-6 h-6 border-[3px] border-purple-400 rounded-full 
                    opacity-70 pointer-events-none z-40 ring-glow"
         style={{
           x: xMedium,
@@ -72,7 +72,7 @@ export default function MultiCursor() {
 
       {/* Slow cursor - largest ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-pink-400 rounded-full 
+        className="fixed top-0 left-0 w-8 h-8 border-[3px] border-pink-400 rounded-full 
                    opacity-50 pointer-events-none z-30 ring-glow"
         style={{
           x: xSlow,
