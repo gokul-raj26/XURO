@@ -22,14 +22,24 @@ export default function MultiCursor() {
   const xSlow = useSpring(mouseX, slowSpring);
   const ySlow = useSpring(mouseY, slowSpring);
 
-  // Update mouse position on move
+ 
+  // Update mouse/touch position on move
   useEffect(() => {
     const move = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
     };
+    // 🚀 Extra for mobile: Touch support
+    const touchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mouseX.set(e.touches[0].clientX);
+        mouseY.set(e.touches[0].clientY);
+      }
+    };
     window.addEventListener("mousemove", move);
+     window.addEventListener("touchmove", touchMove, { passive: false });
     return () => window.removeEventListener("mousemove", move);
+     window.removeEventListener("touchmove", touchMove); // 👉 Extra
   }, [mouseX, mouseY]);
 
   return (
