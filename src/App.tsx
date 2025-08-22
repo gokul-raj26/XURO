@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import SplashCursor from "./components/SplashCursor";
+import Fluid from './components/fluid';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navigation from './components/Navigation';
 import Background from './components/Background';
@@ -74,12 +76,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+<div className="relative w-full min-h-screen bg-black">
+
       {/* Background */}
       <Background />
-
+  <Fluid /> 
       {/* Custom Cursor */}
       <CustomCursor />
+ <SplashCursor />
 
       {/* Navigation */}
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />

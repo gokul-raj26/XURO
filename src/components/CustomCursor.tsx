@@ -10,7 +10,7 @@ export default function MultiCursor() {
   // Spring configs for smooth trailing effect
   const fastSpring = { damping: 20, stiffness: 300 };   // Smallest + fastest
   const mediumSpring = { damping: 40, stiffness: 200 }; // Medium
-  const slowSpring = { damping: 60, stiffness: 100 };   // Largest + slowest
+
 
   // Apply springs for each cursor
   const xFast = useSpring(mouseX, fastSpring);
@@ -19,8 +19,6 @@ export default function MultiCursor() {
   const xMedium = useSpring(mouseX, mediumSpring);
   const yMedium = useSpring(mouseY, mediumSpring);
 
-  const xSlow = useSpring(mouseX, slowSpring);
-  const ySlow = useSpring(mouseY, slowSpring);
 
  
   // Update mouse/touch position on move
@@ -70,18 +68,7 @@ export default function MultiCursor() {
         }}
       />
 
-      {/* Slow cursor - largest ring */}
-      <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border-[3px] border-pink-400 rounded-full 
-                   opacity-50 pointer-events-none z-30 ring-glow"
-        style={{
-          x: xSlow,
-          y: ySlow,
-          translateX: "-50%",
-          translateY: "-50%",
-          color: "#ec4899", // matches Tailwind pink-400
-        }}
-      />
+      
     </>
   );
 }
