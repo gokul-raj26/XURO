@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SplashCursor from "./components/SplashCursor";
-import Fluid from './components/fluid';
+import Fluid from './components/Fluid';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import Navigation from './components/Navigation';
