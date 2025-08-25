@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SplashCursor from "./components/SplashCursor";
 import Fluid from './components/Fluid';
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { motion, AnimatePresence } from 'framer-motion';
 import Navigation from './components/Navigation';
 import Background from './components/Background';
@@ -121,7 +122,12 @@ function App() {
           />
         )}
       </AnimatePresence>
-
+ return (
+    <>
+      {/* your routes/components */}
+      <ToastContainer position="top-right" autoClose={3000} />
+    </>
+  );
       {/* Smooth scroll behavior */}
       <style jsx global>{`
         html {

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap } from 'lucide-react';
 import { useCursor } from '../hooks/useCursor';
 
+
 interface NavigationProps {
   currentPage: string;
   onNavigate: (page: string) => void;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useCursor } from '../hooks/useCursor';
+import { toast } from "react-toastify";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +23,8 @@ const Contact: React.FC = () => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted:', formData);
+     setFormData({ name: "", email: "", message: "" });
+       toast.success("Message Sent ");
   };
 
   const contactInfo = [
