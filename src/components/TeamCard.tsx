@@ -37,6 +37,9 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
     }
   };
 
+  // ✅ Detect if user is on a mobile device
+  const isMobile = typeof window !== "undefined" && /Mobi|Android/i.test(window.navigator.userAgent);
+
   return (
     <motion.div
       className="relative w-80 h-96 perspective-1000"
@@ -44,20 +47,31 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
+      // ✅ Desktop hover events
       onMouseEnter={() => {
-        setHovering(true);
-        setIsFlipped(true);
+        if (!isMobile) {
+          setHovering(true);
+          setIsFlipped(true);
+        }
       }}
       onMouseLeave={() => {
-        setHovering(false);
-        setIsFlipped(false);
+        if (!isMobile) {
+          setHovering(false);
+          setIsFlipped(false);
+        }
+      }}
+      // ✅ Mobile tap/click toggle
+      onClick={() => {
+        if (isMobile) {
+          setIsFlipped((prev) => !prev);
+        }
       }}
     >
       <motion.div
         className="relative w-full h-full transform-style-preserve-3d transition-transform duration-700"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
       >
-        {/* Front Side */}
+        {/* ------------------ Front Side ------------------ */}
         <div className="absolute inset-0 w-full h-full backface-hidden">
           <motion.div
             className="relative w-full h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden group"
@@ -88,15 +102,16 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
                 {member.role}
               </p>
 
+              {/* Instruction Text → Changes based on device */}
               <div className="text-center">
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Hover to learn more
+                  {isMobile ? "Tap to learn more" : "Hover to learn more"}
                 </p>
               </div>
             </div>
 
-            {/* Floating Particles */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            {/* Floating Particles (only show on hover/flip) */}
+            <div className={`absolute inset-0 transition-opacity duration-500 ${isFlipped ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
               {Array.from({ length: 6 }).map((_, i) => (
                 <motion.div
                   key={i}
@@ -119,11 +134,11 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
             </div>
 
             {/* Glow Effect */}
-            <div className={`absolute -inset-1 bg-gradient-to-r ${member.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-2xl blur-sm -z-10`} />
+            <div className={`absolute -inset-1 bg-gradient-to-r ${member.gradient} transition-opacity duration-500 rounded-2xl blur-sm -z-10 ${isFlipped ? "opacity-30" : "opacity-0 group-hover:opacity-30"}`} />
           </motion.div>
         </div>
 
-        {/* Back Side */}
+        {/* ------------------ Back Side ------------------ */}
         <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180">
           <motion.div
             className="relative w-full h-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 flex flex-col justify-center"

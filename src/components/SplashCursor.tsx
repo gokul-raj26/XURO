@@ -18,6 +18,7 @@ const SplashCursor: React.FC = () => {
 
     const fluid = createFluid(canvas);
 
+    // Handle screen resize
     const handleResize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
@@ -25,13 +26,27 @@ const SplashCursor: React.FC = () => {
       canvas.height = height;
     };
 
+    // ✅ For Desktop Mouse
     const handleMouseMove = (e: MouseEvent) => {
       fluid.splash(e.clientX, e.clientY);
     };
 
+    // ✅ For Mobile Touch (Extra)
+    const handleTouchMove = (e: TouchEvent) => {
+      // e.touches = list of fingers on screen
+      // We’ll take the first finger only
+      const touch = e.touches[0];
+      if (touch) {
+        fluid.splash(touch.clientX, touch.clientY);
+      }
+    };
+    // Add event listeners
     window.addEventListener("resize", handleResize);
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove); // Desktop
+    window.addEventListener("touchmove", handleTouchMove); // Mobile
+  
 
+    // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
       fluid.update();
@@ -40,9 +55,12 @@ const SplashCursor: React.FC = () => {
     };
     animate();
 
+    // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+      
     };
   }, []);
 
