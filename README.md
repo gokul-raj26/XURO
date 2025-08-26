@@ -10,36 +10,45 @@
 
 ### 🎨 Design & Visual Effects
 - **Dark Neon Aesthetic**: Electric blue, purple, and pink gradients with glassmorphism effects
-- **3D Interactive Elements**: Three.js powered 3D sphere animations and interactive components
+- **Interactive Service Cards**: Professional service images with smooth hover animations
 - **Custom Animations**: Smooth scroll reveals, parallax effects, and kinetic text animations
 - **Floating Particles**: Ambient visual effects with floating orbs and gradient elements
-- **Custom Cursor**: Magnetic cursor with glowing hover effects
-- **Responsive Design**: Optimized for all devices from mobile to desktop
+- **Multi-Cursor System**: Advanced cursor with trailing effects and mobile touch support
+- **Responsive Design**: Optimized for all devices from mobile to desktop with touch interactions
 
 ### 🏗️ Architecture & Performance
 - **Modern React**: Built with React 18 and TypeScript for type safety
 - **Framer Motion**: Smooth page transitions and component animations
-- **Three.js Integration**: 3D graphics and interactive elements
+- **Fluid Animations**: Interactive splash effects on cursor movement and touch
 - **Optimized Performance**: Code splitting and lazy loading for fast load times
 - **SEO Ready**: Proper meta tags and semantic HTML structure
+- **Mobile-First**: Touch-optimized interactions and responsive breakpoints
 
 ### 📱 Pages & Functionality
-- **Home**: 3D hero section with animated sphere and service highlights
-- **About**: Interactive timeline and team showcase with hover animations
-- **Services**: 6 core services with 3D interactive cards and hover effects
+- **Home**: Hero section with animated elements and service highlights
+- **About**: Interactive timeline and team showcase with flip cards
+- **Services**: 6 core services with professional images and interactive cards
 - **Showcase**: Filterable portfolio gallery with project previews
-- **Testimonials**: Animated carousel with client feedback and ratings
+- **Testimonials**: Animated testimonial cards with client feedback and ratings
 - **Contact**: Interactive contact form with floating social icons
+
+### 🎯 Services Offered
+1. **Logo Design** - Unique brand identities and visual systems
+2. **Web Design** - User-centric interfaces with modern aesthetics  
+3. **Web Development** - High-performance applications with cutting-edge tech
+4. **Product Photography** - Professional photography and visual content
+5. **App Development** - Native and cross-platform mobile applications
+6. **Training Programs** - Technical workshops and skill development
 
 ## 🛠️ Technology Stack
 
 | Category | Technology |
 |----------|------------|
 | **Framework** | React 18 + TypeScript |
-| **Styling** | Tailwind CSS + Custom CSS |
+| **Styling** | Tailwind CSS + Custom CSS Variables |
 | **Animations** | Framer Motion |
-| **3D Graphics** | Three.js + React Three Fiber |
-| **Routing** | React Router DOM |
+| **Interactions** | Custom Cursor + Touch Support |
+| **Routing** | Single Page Application |
 | **Icons** | Lucide React |
 | **Build Tool** | Vite |
 | **Deployment** | Vercel/Netlify Ready |
@@ -88,76 +97,108 @@ npm run preview
 ```
 src/
 ├── components/           # Reusable UI components
-│   ├── Navigation.tsx   # Main navigation with animations
-│   ├── CustomCursor.tsx # Custom animated cursor
-│   ├── FloatingOrbs.tsx # Ambient floating particles
-│   └── Hero3D.tsx       # 3D hero section component
+│   ├── Navigation.tsx   # Main navigation with company logo
+│   ├── CustomCursor.tsx # Multi-cursor system with mobile support
+│   ├── SplashCursor.tsx # Fluid splash effects
+│   ├── ServiceCard.tsx  # Service cards with images
+│   ├── TeamCard.tsx     # Flip cards with mobile touch support
+│   └── Background.tsx   # Animated background elements
 ├── pages/               # Page components
-│   ├── Home.tsx         # Landing page with hero
-│   ├── About.tsx        # Company story and timeline
-│   ├── Services.tsx     # Service offerings
+│   ├── Home.tsx         # Landing page with service previews
+│   ├── About.tsx        # Company story and team
+│   ├── Services.tsx     # Service offerings with images
 │   ├── Showcase.tsx     # Portfolio gallery
 │   ├── Testimonials.tsx # Client testimonials
 │   └── Contact.tsx      # Contact form and info
+├── hooks/               # Custom React hooks
+│   ├── useCursor.ts     # Cursor state management
+│   └── useScrollAnimation.ts # Scroll-triggered animations
+├── utils/               # Utility functions
+│   └── fluid.ts         # Fluid animation system
+├── data/                # Static data
+│   ├── team.ts          # Team member information
+│   ├── timeline.ts      # Company timeline events
+│   └── testimonials.ts  # Client testimonials
 ├── App.tsx              # Main app component with routing
 ├── App.css              # Global styles and animations
 ├── main.tsx             # Application entry point
-└── index.css            # Tailwind CSS imports
+└── index.css            # Tailwind CSS + Custom color palette
 ```
-
-## 🎯 Services Offered
-
-XURO specializes in six core areas:
-
-1. **Logo Design** - Unique brand identities and visual systems
-2. **Web Design** - User-centric interfaces with modern aesthetics
-3. **Web Development** - High-performance applications with cutting-edge tech
-4. **Product Shoots** - Professional photography and visual content
-5. **App Development** - Native and cross-platform mobile applications
-6. **Training Programs** - Technical workshops and skill development
 
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary**: Electric Blue (#667eea) to Purple (#764ba2)
-- **Secondary**: Pink (#ec4899) to Rose (#f43f5e)
-- **Accent**: Cyan (#06b6d4) to Blue (#3b82f6)
-- **Background**: Pure Black (#000000) to Dark Gray (#111827)
+Our comprehensive color system includes:
+
+#### Primary Colors
+- **Electric Blue**: `#3b82f6` (Blue-500) to `#60a5fa` (Blue-400)
+- **Purple**: `#8b5cf6` (Purple-500) to `#a78bfa` (Purple-400)
+
+#### Secondary Colors  
+- **Pink**: `#ec4899` (Pink-500) to `#f472b6` (Pink-400)
+- **Rose**: `#f43f5e` (Rose-500) to `#fb7185` (Rose-400)
+
+#### Accent Colors
+- **Cyan**: `#06b6d4`, **Teal**: `#14b8a6`, **Green**: `#10b981`
+- **Orange**: `#f97316`, **Indigo**: `#6366f1`
+
+#### Background System
+- **Primary**: Pure Black (`#000000`) to Dark Gray (`#111827`)
+- **Glass Effects**: `rgba(255, 255, 255, 0.05)` and `rgba(255, 255, 255, 0.1)`
 
 ### Typography
-- **Primary Font**: Orbitron (futuristic, tech-inspired)
-- **Secondary Font**: Inter (clean, readable)
+- **Primary Font**: System fonts optimized for readability
 - **Font Weights**: 300, 400, 500, 600, 700, 900
+- **Responsive Scaling**: Fluid typography across all breakpoints
 
-### Effects
+### Effects & Animations
 - **Glassmorphism**: `backdrop-filter: blur(20px)` with transparent backgrounds
 - **Neon Glow**: Custom box-shadow with gradient colors
 - **Smooth Animations**: 0.3s ease transitions with Framer Motion
-- **Parallax Scrolling**: Scroll-triggered animations and reveals
+- **Touch Interactions**: Optimized for mobile devices
 
 ## 🔧 Customization
 
 ### Adding New Services
 1. Edit `src/pages/Services.tsx`
 2. Add new service object to the `services` array
-3. Include icon, title, description, features, and color gradient
+3. Include image URL, title, description, and gradient colors
 
 ### Modifying Animations
 - **Page Transitions**: Edit motion variants in page components
-- **Scroll Animations**: Adjust `whileInView` properties
-- **3D Elements**: Modify Three.js components in `Hero3D.tsx`
+- **Scroll Animations**: Adjust `whileInView` properties in `useScrollAnimation`
+- **Cursor Effects**: Modify settings in `CustomCursor.tsx` and `SplashCursor.tsx`
 
 ### Updating Content
 - **Company Info**: Edit text content in respective page components
-- **Images**: Replace placeholder URLs with actual project images
+- **Service Images**: Replace image URLs with your own professional images
 - **Contact Details**: Update contact information in `Contact.tsx`
+- **Team Members**: Modify team data in `src/data/team.ts`
 
-## 📱 Responsive Breakpoints
+### Color System Customization
+All colors are centralized in `src/index.css` using CSS custom properties:
 
+```css
+:root {
+  --color-primary-blue: #3b82f6;
+  --color-primary-purple: #8b5cf6;
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-blue), var(--color-primary-purple));
+}
+```
+
+## 📱 Mobile Optimization
+
+### Touch Support
+- **Service Cards**: Touch-optimized hover effects
+- **Navigation**: Mobile-friendly menu with touch interactions
+- **Cursors**: Automatic mobile detection with touch event handling
+- **Team Cards**: Tap-to-flip functionality on mobile devices
+
+### Responsive Breakpoints
 ```css
 /* Mobile First Approach */
 sm: 640px   /* Small devices */
-md: 768px   /* Medium devices */
+md: 768px   /* Medium devices */  
 lg: 1024px  /* Large devices */
 xl: 1280px  /* Extra large devices */
 2xl: 1536px /* 2X Extra large devices */
@@ -184,33 +225,38 @@ npm run build
 # Upload contents to your web server
 ```
 
-## 🔍 SEO Optimization
+## 🔍 SEO & Performance
 
+### Optimization Features
 - **Meta Tags**: Proper title, description, and Open Graph tags
 - **Semantic HTML**: Proper heading hierarchy and ARIA labels
 - **Performance**: Optimized images and code splitting
 - **Accessibility**: Keyboard navigation and screen reader support
+- **Core Web Vitals**: Optimized for Google's performance metrics
+
+### Image Optimization
+- All service images are optimized with Pexels URLs
+- Responsive image loading with proper aspect ratios
+- Lazy loading for improved performance
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
-**Three.js not loading**
-```bash
-# Clear node_modules and reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
-
-**Animation performance issues**
-- Reduce particle count in `FloatingOrbs.tsx`
-- Disable animations on mobile devices
+**Animation performance on mobile**
+- Reduce particle count in background components
 - Use `will-change` CSS property sparingly
+- Test on actual devices for performance
+
+**Touch interactions not working**
+- Ensure mobile detection is working: `window.navigator.userAgent`
+- Check touch event listeners are properly attached
+- Test on various mobile browsers
 
 **Build errors**
 - Check TypeScript errors: `npm run lint`
 - Ensure all imports are correct
-- Verify Three.js peer dependencies
+- Verify image URLs are accessible
 
 ## 📄 License
 
@@ -227,8 +273,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support and questions:
-- **Email**: hello@xuro.agency
-- **Website**: [xuro.agency](https://xuro.agency)
+- **Email**: xuroglobal@gmail.com
+- **Phone**: +91 8122016648
+- **Location**: Chennai, India
 - **GitHub Issues**: [Create an issue](https://github.com/your-username/xuro-portfolio/issues)
 
 ---
@@ -236,4 +283,5 @@ For support and questions:
 <div align="center">
   <p>Built with ❤️ by the XURO team</p>
   <p><strong>Code. Create. Captivate.</strong></p>
+  <p>🎨 Professional service images • 📱 Mobile-optimized • ✨ Futuristic design</p>
 </div>
