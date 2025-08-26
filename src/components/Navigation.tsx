@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useCursor } from '../hooks/useCursor';
 
 
@@ -37,6 +37,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
     setIsOpen(false);
   };
 
+  // Detect if user is on a mobile device
+  const isMobile = typeof window !== "undefined" && /Mobi|Android/i.test(window.navigator.userAgent);
   return (
     <>
       <motion.nav
@@ -55,14 +57,21 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
             <motion.div
               className="flex items-center space-x-2 cursor-pointer"
               onClick={() => handleNavClick('home')}
-              onMouseEnter={() => setHovering(true)}
-              onMouseLeave={() => setHovering(false)}
+              onMouseEnter={() => !isMobile && setHovering(true)}
+              onMouseLeave={() => !isMobile && setHovering(false)}
+              onTouchStart={() => isMobile && setHovering(true)}
+              onTouchEnd={() => isMobile && setHovering(false)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative">
-                <Zap className="w-8 h-8 text-blue-400" />
-                <div className="absolute inset-0 bg-blue-400 blur-sm opacity-50" />
+              {/* Company Logo */}
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400/50">
+                <img
+                  src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+                  alt="XURO Logo"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-500/20" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -83,8 +92,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
                       : 'text-gray-300 hover:text-white'
                   }`}
                   onClick={() => handleNavClick(item.id)}
-                  onMouseEnter={() => setHovering(true)}
-                  onMouseLeave={() => setHovering(false)}
+                  onMouseEnter={() => !isMobile && setHovering(true)}
+                  onMouseLeave={() => !isMobile && setHovering(false)}
+                  onTouchStart={() => isMobile && setHovering(true)}
+                  onTouchEnd={() => isMobile && setHovering(false)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -104,8 +115,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
             <motion.button
               className="lg:hidden p-2 text-gray-300 hover:text-white"
               onClick={() => setIsOpen(!isOpen)}
-              onMouseEnter={() => setHovering(true)}
-              onMouseLeave={() => setHovering(false)}
+              onMouseEnter={() => !isMobile && setHovering(true)}
+              onMouseLeave={() => !isMobile && setHovering(false)}
+              onTouchStart={() => isMobile && setHovering(true)}
+              onTouchEnd={() => isMobile && setHovering(false)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -134,8 +147,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
                         : 'text-gray-300 hover:text-white hover:bg-white/5'
                     }`}
                     onClick={() => handleNavClick(item.id)}
-                    onMouseEnter={() => setHovering(true)}
-                    onMouseLeave={() => setHovering(false)}
+                    onMouseEnter={() => !isMobile && setHovering(true)}
+                    onMouseLeave={() => !isMobile && setHovering(false)}
+                    onTouchStart={() => isMobile && setHovering(true)}
+                    onTouchEnd={() => isMobile && setHovering(false)}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
