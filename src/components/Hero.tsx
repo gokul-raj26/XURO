@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { useCursor } from '../hooks/useCursor';
+import { useTypewriter } from "../hooks/useTypewriter";
 
 interface HeroProps {
   onNavigate: (page: string) => void;
@@ -9,6 +10,11 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   const { setHovering } = useCursor();
+
+  const typedText = useTypewriter(
+  ["Code. Create. Captivate.", "Design. Develop. Deliver.", "Ideas → Reality"],
+  { typingSpeed: 80, pauseDuration: 1500, loop: true }
+);
 
   const textVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -66,12 +72,14 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         </motion.h1>
 
         {/* Tagline */}
-        <motion.p
-          className="text-2xl md:text-3xl text-gray-300 mb-8 font-light"
-          variants={textVariants}
-        >
-          Code. Create. Captivate.
-        </motion.p>
+       <motion.p
+                className="text-2xl md:text-3xl text-gray-300 mb-8 font-light"
+                 variants={textVariants}
+                  >
+                      {typedText}
+                   <span className="cursor">|</span>
+                        </motion.p>
+
 
         {/* Description */}
         <motion.p

@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { useCursor } from '../hooks/useCursor';
 
 
+
 interface NavigationProps {
   currentPage: string;
   onNavigate: (page: string) => void;
@@ -64,7 +65,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {/* Company Logo */}
+              {
+              /* Company Logo 
               <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400/50">
                 <img
                   src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
@@ -72,7 +74,9 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-500/20" />
-              </div>
+              </div>*/
+              }
+
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                   XURO

@@ -13,6 +13,8 @@ import Showcase from './pages/Showcase';
 import About from './pages/About';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
+import { useTypewriter } from "./hooks/useTypewriter"; 
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');

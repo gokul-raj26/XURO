@@ -2,38 +2,33 @@ import { useState, useEffect } from 'react';
 import { CursorState } from '../types';
 
 export const useCursor = () => {
-  const [cursor, setCursor] = useState<CursorState>({
-    x: 0,
-    y: 0,
+  const [cursor, setCursor] = useState<Omit<CursorState, "x" | "y">>({
     isHovering: false,
     isClicking: false,
   });
 
   useEffect(() => {
-    const updateCursor = (e: MouseEvent) => {
-      setCursor(prev => ({
-        ...prev,
-        x: e.clientX,
-        y: e.clientY,
-      }));
-    };
-
-    const handleMouseDown = () => {
+    const handleDown = () => {
       setCursor(prev => ({ ...prev, isClicking: true }));
     };
 
-    const handleMouseUp = () => {
+    const handleUp = () => {
       setCursor(prev => ({ ...prev, isClicking: false }));
     };
 
-    document.addEventListener('mousemove', updateCursor);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
+    // 🖱️ Mouse events
+    document.addEventListener('mousedown', handleDown);
+    document.addEventListener('mouseup', handleUp);
+
+    // 📱 Touch events
+    document.addEventListener('touchstart', handleDown);
+    document.addEventListener('touchend', handleUp);
 
     return () => {
-      document.removeEventListener('mousemove', updateCursor);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('mousedown', handleDown);
+      document.removeEventListener('mouseup', handleUp);
+      document.removeEventListener('touchstart', handleDown);
+      document.removeEventListener('touchend', handleUp);
     };
   }, []);
 
