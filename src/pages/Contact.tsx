@@ -24,7 +24,9 @@ const Contact: React.FC = () => {
     // Handle form submission here
     console.log('Form submitted:', formData);
      setFormData({ name: "", email: "", message: "" });
-       toast.success("Message Sent ");
+   toast.success(" Message Sent!",{
+    icon: false
+   }); 
   };
 
   const contactInfo = [

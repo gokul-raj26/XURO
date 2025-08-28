@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SplashCursor from "./components/SplashCursor";
 import Fluid from './components/Fluid';
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { motion, AnimatePresence } from 'framer-motion';
 import Navigation from './components/Navigation';
 import Background from './components/Background';
@@ -13,7 +11,8 @@ import Showcase from './pages/Showcase';
 import About from './pages/About';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
-import { useTypewriter } from "./hooks/useTypewriter"; 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 function App() {
@@ -124,12 +123,25 @@ function App() {
           />
         )}
       </AnimatePresence>
- return (
-    <>
-      {/* your routes/components */}
-      <ToastContainer position="top-right" autoClose={3000} />
-    </>
-  );
+      
+
+<ToastContainer
+  position="top-right"
+  autoClose={1000}           // 2 sec la auto close
+  hideProgressBar={true}     // progress bar hide
+  closeButton={false}        // close button hide
+  newestOnTop={true}
+  closeOnClick
+  rtl={false}
+  pauseOnHover={false}       // hover panna stop aagathu
+  draggable={false}          // drag panna move aagathu
+  toastClassName="gradient-toast"     // custom toast style
+  className="gradient-toast-body" // text style
+/>
+
+
+  
+ 
       {/* Smooth scroll behavior */}
       <style jsx global>{`
         html {
