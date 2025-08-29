@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import React, { useState, useEffect } from 'react';
 import SplashCursor from "./components/SplashCursor";
 import Fluid from './components/Fluid';
@@ -84,12 +85,16 @@ function App() {
       {/* Background */}
       <Background />
   <Fluid /> 
+
       {/* Custom Cursor */}
       <CustomCursor />
  <SplashCursor />
 
+ {/* Web Analytics   */}
+  <Analytics />
       {/* Navigation */}
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
+
 
       {/* Page Transitions */}
       <AnimatePresence mode="wait">
