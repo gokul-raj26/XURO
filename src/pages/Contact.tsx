@@ -20,51 +20,63 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Generate current time in IST
-      const currentTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-      
-      // Format the message for Telegram
-      const telegramMessage = `Name : ${formData.name}
-Email : ${formData.email}
-Message : ${formData.message}
-Time : ${currentTime}`;
-      
-      // Encode the message for URL
-      const encodedMessage = encodeURIComponent(telegramMessage);
-      
-      // Telegram bot credentials
-      const botToken = '8203246589:AAEGszbNV1wgos1QXg62h50OffZUb_16NdQ';
-      const chatId = '1583741579';
-      
-      // Send message to Telegram
-      const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
-      
-      const response = await fetch(telegramUrl);
-      const result = await response.json();
-      
-      if (result.ok) {
-        // Reset form and show success toast
-        setFormData({ name: "", email: "", message: "" });
-        toast.success("Message sent successfully ✅", {
-          icon: false
-        });
-      } else {
-        throw new Error('Failed to send message');
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    // Generate current time in IST
+    const currentTime = new Date().toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+    });
+
+    // Format the message for Telegram with bold labels + emojis
+    const telegramMessage = `
+<b>📩 New Contact Enquiry</b>
+
+<b>👤 Name:</b> ${formData.name}
+<b>📧 Email:</b> ${formData.email}
+<b>💬 Message:</b> ${formData.message}
+<b>⏰ Time:</b> ${currentTime}
+    `;
+
+    // Telegram bot credentials
+    const botToken = "8203246589:AAEGszbNV1wgos1QXg62h50OffZUb_16NdQ";
+    const chatId = "1583741579";
+
+    // Send message to Telegram with notification ON
+    const response = await fetch(
+      `https://api.telegram.org/bot${botToken}/sendMessage`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: telegramMessage,
+          parse_mode: "HTML", // allows bold/emoji formatting
+          disable_notification: false, // ensures push notification sound
+        }),
       }
-    } catch (error) {
-      console.error('Error sending message:', error);
-      toast.error("Failed to send message. Please try again.", {
-        icon: false
-      });
-    } finally {
-      setIsSubmitting(false);
+    );
+
+    const result = await response.json();
+
+    if (result.ok) {
+      setFormData({ name: "", email: "", message: "" });
+      toast.success("Message sent successfully ", { icon: false });
+    } else {
+      throw new Error("Failed to send message");
     }
-  };
+  } catch (error) {
+    console.error("Error sending message:", error);
+    toast.error("Failed to send message. Please try again.", { icon: false });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   const contactInfo = [
     {
@@ -127,7 +139,7 @@ Time : ${currentTime}`;
                   value={formData.name}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 focus:bg-white/10 transition-all duration-300"
-                  placeholder="Your name"
+                  placeholder="Your Name"
                   required
                   disabled={isSubmitting}
                   onMouseEnter={() => setHovering(true)}
