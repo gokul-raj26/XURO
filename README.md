@@ -30,7 +30,7 @@
 - **Services**: 6 core services with professional images and interactive cards
 - **Showcase**: Filterable portfolio gallery with project previews
 - **Testimonials**: Animated testimonial cards with client feedback and ratings
-- **Contact**: Interactive contact form with floating social icons
+- **Contact**: Interactive contact form with Telegram bot integration for direct messaging
 
 ### 🎯 Services Offered
 1. **Logo Design** - Unique brand identities and visual systems
@@ -175,6 +175,13 @@ Our comprehensive color system includes:
 - **Contact Details**: Update contact information in `Contact.tsx`
 - **Team Members**: Modify team data in `src/data/team.ts`
 
+### Contact Form Integration
+The contact form is integrated with Telegram bot for direct message delivery:
+- **Bot Token**: Configured for automatic message forwarding
+- **Message Format**: Structured with Name, Email, Message, and IST timestamp
+- **Error Handling**: Toast notifications for success/failure states
+- **Form Reset**: Automatic form clearing after successful submission
+
 ### Color System Customization
 All colors are centralized in `src/index.css` using CSS custom properties:
 
@@ -273,7 +280,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support and questions:
-- **Email**: xuroglobal@gmail.com
+- **Email**: xuroglobal@gmail.com (or use the contact form for direct Telegram delivery)
 - **Phone**: +91 8122016648
 - **Location**: Chennai, India
 - **GitHub Issues**: [Create an issue](https://github.com/your-username/xuro-portfolio/issues)
@@ -283,5 +290,5 @@ For support and questions:
 <div align="center">
   <p>Built with ❤️ by the XURO team</p>
   <p><strong>Code. Create. Captivate.</strong></p>
-  <p>🎨 Professional service images • 📱 Mobile-optimized • ✨ Futuristic design</p>
+  <p>🎨 Professional service images • 📱 Mobile-optimized • ✨ Futuristic design • 📱 Telegram bot integration</p>
 </div>
