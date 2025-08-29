@@ -21,12 +21,30 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-     setFormData({ name: "", email: "", message: "" });
-   toast.success(" Message Sent!",{
-    icon: false
-   }); 
+    
+    // Generate current time in IST
+    const currentTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+    
+    // Format the message for WhatsApp
+    const whatsappMessage = `Name : ${formData.name}
+Email : ${formData.email}
+Message : ${formData.message}
+Time : ${currentTime}`;
+    
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // WhatsApp URL with phone number (without +)
+    const whatsappUrl = `https://wa.me/918122016648?text=${encodedMessage}`;
+    
+    // Open WhatsApp in new window/tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form and show success toast
+    setFormData({ name: "", email: "", message: "" });
+    toast.success("Redirecting to WhatsApp!", {
+      icon: false
+    });
   };
 
   const contactInfo = [
