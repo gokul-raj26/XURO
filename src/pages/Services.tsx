@@ -3,7 +3,13 @@ import { motion } from 'framer-motion';
 import ServiceCard from '../components/ServiceCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Service } from '../types';
-import logoImg from '../assets/logo-design.png';
+import logoDesignImg from '../assets/logo design.jpg';
+import mobileAppImg from '../assets/mobile app.jpg';
+import productImg from '../assets/product.jpg';
+import trainingImg from '../assets/traings.jpg';
+import uiDesignImg from '../assets/UI-design-process-steps.jpg';
+import webDevImg from '../assets/webdev.jpg';
+
 
 const Services: React.FC = () => {
   const servicesRef = useScrollAnimation();
@@ -13,42 +19,42 @@ const Services: React.FC = () => {
       id: 'logo-design',
       title: 'Logo Design',
       description: 'Memorable brand identities that make lasting impressions',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: logoDesignImg,
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       id: 'web-design',
       title: 'Web Design',
       description: 'Stunning, user-centric designs that captivate and convert',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: uiDesignImg,
       gradient: 'from-purple-500 to-blue-500',
     },
     {
       id: 'web-development',
       title: 'Web Development',
       description: 'Cutting-edge web applications built with modern technologies',
-      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image:webDevImg,
       gradient: 'from-pink-500 to-purple-500',
     },
     {
       id: 'product-photography',
       title: 'Product Photography',
       description: 'Professional photography that showcases your products beautifully',
-      image: 'https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: productImg,
       gradient: 'from-green-500 to-blue-500',
     },
     {
       id: 'app-development',
       title: 'App Development',
       description: 'Native and cross-platform mobile applications',
-      image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-147413.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: mobileAppImg,
       gradient: 'from-orange-500 to-pink-500',
     },
     {
       id: 'training-programs',
       title: 'Training Programs',
       description: 'Comprehensive training in design and development skills',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image:trainingImg,
       gradient: 'from-indigo-500 to-purple-500',
     },
   ];

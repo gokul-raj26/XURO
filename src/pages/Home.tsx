@@ -4,6 +4,10 @@ import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Service } from '../types';
+import mobileAppImg from '../assets/mobile app.jpg';
+import uiDesignImg from '../assets/UI-design-process-steps.jpg';
+import webDevImg from '../assets/webdev.jpg';
+
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -17,21 +21,21 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       id: 'web-design',
       title: 'Web Design',
       description: 'Stunning, user-centric designs that captivate and convert',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: uiDesignImg ,
       gradient: 'from-blue-500 to-purple-600',
     },
     {
       id: 'web-development',
       title: 'Web Development',
       description: 'Cutting-edge web applications built with modern technologies',
-      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: webDevImg,
       gradient: 'from-purple-500 to-pink-600',
     },
     {
       id: 'app-development',
       title: 'App Development',
       description: 'Native and cross-platform mobile applications',
-      image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-147413.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+      image: mobileAppImg,
       gradient: 'from-pink-500 to-blue-600',
     },
   ];
