@@ -17,6 +17,7 @@ export interface Project {
 }
 
 export interface Testimonial {
+  role: string;
   id: string;
   name: string;
   company: string;

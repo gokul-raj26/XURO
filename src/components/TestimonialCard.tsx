@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+
 import { useCursor } from '../hooks/useCursor';
 import { Testimonial } from '../types';
+ import { Star } from "lucide-react"; 
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
@@ -73,24 +74,54 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, index })
           </p>
         </motion.div>
 
-        {/* Rating */}
-        <motion.div
-          className="flex items-center space-x-1 mb-6"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: index * 0.1 + 0.4 }}
-        >
-          {Array.from({ length: testimonial.rating }).map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ scale: 0, rotate: -180 }}
-              whileInView={{ scale: 1, rotate: 0 }}
-              transition={{ delay: index * 0.1 + 0.5 + i * 0.1 }}
-            >
-              <Star className="w-5 h-5 text-yellow-400 fill-current" />
-            </motion.div>
-          ))}
-        </motion.div>
+       
+
+{/* ⭐ Rating Stars Component */}
+<motion.div
+  className="flex items-center space-x-1 mb-6"
+  initial={{ opacity: 0, x: -20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ delay: index * 0.1 + 0.4 }}
+>
+  {Array.from({ length: 5 }).map((_, i) => {
+    const rating = testimonial.rating; // Example: 3.2
+    const fullStars = Math.floor(rating); // Full stars = 3
+    const decimal = rating - fullStars;  // Decimal part = 0.2
+
+    let fillPercentage = 0;
+    if (i < fullStars) {
+      fillPercentage = 100; // Full star
+    } else if (i === fullStars) {
+      fillPercentage = decimal * 100; // Partial star
+    } else {
+      fillPercentage = 0; // Empty star
+    }
+
+    return (
+      <motion.div
+        key={i}
+        initial={{ scale: 0, rotate: -180 }}
+        whileInView={{ scale: 1, rotate: 0 }}
+        transition={{ delay: index * 0.1 + 0.5 + i * 0.1 }}
+        className="relative w-5 h-5"
+      >
+        {/* 1. Gray empty star (background) */}
+        <Star className="w-5 h-5 text-gray-300 absolute" />
+
+        {/* 2. Yellow filled star (foreground, clipped based on percentage) */}
+        <Star
+          className="w-5 h-5 text-yellow-400 absolute"
+          fill="currentColor" // 🔑 This makes the inside filled
+          style={{
+            clipPath: `inset(0 ${100 - fillPercentage}% 0 0)`, // Controls how much star is filled
+          }}
+        />
+      </motion.div>
+    );
+  })}
+</motion.div>
+
+
 
         {/* Client Info */}
         <motion.div
@@ -115,7 +146,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, index })
             <h4 className="text-white font-semibold text-lg group-hover:text-blue-400 transition-colors">
               {testimonial.name}
             </h4>
-            <p className="text-gray-400 text-sm">{testimonial.company}</p>
+            <p className="text-gray-400 text-sm">{testimonial.company},  {testimonial.role}</p>
+              
           </div>
         </motion.div>
       </div>

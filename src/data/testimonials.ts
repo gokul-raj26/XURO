@@ -6,7 +6,7 @@ export const testimonials = [
     role: 'Senior UX Lead',
     content: 'XURO helped us craft an interactive microsite that users still talk about.',
     avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-    rating: 5,
+    rating: 4,
   },
   {
     id: '2',
@@ -24,7 +24,7 @@ export const testimonials = [
     role: 'Product Manager',
     content: 'The perfect mix of code and creativity. Can\'t wait to collaborate again.',
     avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-    rating: 5,
+    rating: 4.5,
   },
   {
     id: '4',
@@ -42,7 +42,7 @@ export const testimonials = [
     role: 'Creative Director',
     content: 'Innovative approach to digital storytelling. Exceeded all expectations.',
     avatar: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-    rating: 5,
+    rating:4.6,
   },
   {
     id: '6',
@@ -51,6 +51,6 @@ export const testimonials = [
     role: 'Senior Developer',
     content: 'Technical excellence meets artistic vision. Truly remarkable work.',
     avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-    rating: 5,
+    rating: 4.5,
   },
 ];
