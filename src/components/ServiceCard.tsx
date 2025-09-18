@@ -49,10 +49,33 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
         {service.title}
       </h3>
 
-      {/* Description */}
-      <p className="text-gray-400 leading-relaxed">
-        {service.description}
-      </p>
+    {/* Description */}
+<p className="text-gray-400 leading-relaxed mb-4">
+  {service.description}
+</p>
+
+{/* Points List */}
+{service.points && (
+  <ul className="text-gray-400 leading-relaxed space-y-2">
+    {service.points.map((point, index) => (
+      <li key={index} className="flex items-start">
+        {/* Check Icon */}
+        <svg
+          className="w-5 h-5 text-blue-400 mt-1 mr-2 flex-shrink-0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>{point}</span>
+      </li>
+    ))}
+  </ul>
+)}
+
+      
 
       {/* Glow Effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm -z-10" />

@@ -17,44 +17,86 @@ const Services: React.FC = () => {
   const services: Service[] = [
     {
       id: 'logo-design',
-      title: 'Logo Design',
-      description: 'Memorable brand identities that make lasting impressions',
+     title: 'Branding & Visual Design',
+    description: 'Crafting strong brand identities and creative visual assets that communicate your business vision effectively.',
+    points: [
+      "Custom Logo Design",
+      "Corporate & Minimalist Branding",
+      "Creative Graphic Design (Posters, Flyers, Brochures)",
+      "Marketing & Social Media Assets",
+      "Brand Guidelines & Style Systems"
+    ],
       image: logoDesignImg,
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       id: 'web-design',
-      title: 'Web Design',
-      description: 'Stunning, user-centric designs that captivate and convert',
+      title: 'UI/UX & Web Design',
+    description: 'Designing intuitive, conversion-driven digital experiences with responsive layouts and modern design systems.',
+    points: [
+      "Wireframing & Prototyping",
+      "Responsive Website Design",
+      "Interactive UI Components",
+      "Design Systems & UI Kits",
+      "Usability & Accessibility Optimization"
+    ],
       image: uiDesignImg,
       gradient: 'from-purple-500 to-blue-500',
     },
     {
       id: 'web-development',
       title: 'Web Development',
-      description: 'Cutting-edge web applications built with modern technologies',
+    description: 'Developing scalable, secure, and high-performance websites tailored to business goals with modern technologies.',
+    points: [
+      "Custom Web Development",
+      "Single & Multi-Page Applications",
+      "Interactive Web Experiences",
+      "Enterprise & Corporate Websites",
+      "Cross-browser Compatibility"
+    ],
       image:webDevImg,
       gradient: 'from-pink-500 to-purple-500',
     },
     {
       id: 'product-photography',
-      title: 'Product Photography',
-      description: 'Professional photography that showcases your products beautifully',
+    title: 'Creative Media Production',
+    description: 'Delivering high-quality photography and video content to enhance brand storytelling and digital presence.',
+    points: [
+      "Product & Lifestyle Photography",
+      "Professional Photo Editing & Retouching",
+      "Corporate & Promotional Videos",
+      "Social Media Short-form Content",
+      "Motion Graphics & VFX"
+    ],
       image: productImg,
       gradient: 'from-green-500 to-blue-500',
     },
-    {
-      id: 'app-development',
-      title: 'App Development',
-      description: 'Native and cross-platform mobile applications',
-      image: mobileAppImg,
-      gradient: 'from-orange-500 to-pink-500',
+     {
+      id: 'training-programs',
+     title: 'Training & Consulting',
+    description: 'Providing hands-on training programs and expert consulting to help individuals and businesses grow digitally.',
+    points: [
+      "Web & App Development Training",
+      "UI/UX & Design Workshops",
+      "Photography & Editing Sessions",
+      "Digital Marketing Strategy Consulting",
+      "End-to-end Project Mentorship"
+    ],
+      image:trainingImg,
+      gradient: 'from-indigo-500 to-purple-500',
     },
     {
-      id: 'training-programs',
-      title: 'Training Programs',
-      description: 'Comprehensive training in design and development skills',
-      image:trainingImg,
+      id: 'Mobile App-Development',
+    title: 'Mobile App Development',
+    description: 'Building cross-platform and native mobile apps with optimized performance and seamless user experiences.',
+    points: [
+      "iOS & Android Applications",
+      "Cross-platform Apps (Flutter / React Native)",
+      "API & Database Integration",
+      "Mobile-first UI/UX Implementation",
+      "App Store Deployment & Maintenance"
+    ],
+     image: mobileAppImg,
       gradient: 'from-indigo-500 to-purple-500',
     },
   ];

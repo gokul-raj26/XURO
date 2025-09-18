@@ -17,11 +17,11 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
-    { id: 'showcase', label: 'Showcase' },
-    { id: 'testimonials', label: 'Testimonials' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'about', label: 'Who We Are' },
+    { id: 'services', label: 'Solutions' },
+    { id: 'showcase', label: 'Highlights' },
+    { id: 'testimonials', label: 'Results' },
+    { id: 'contact', label: 'Connect' },
   ];
 
   useEffect(() => {

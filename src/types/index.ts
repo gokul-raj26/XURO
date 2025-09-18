@@ -2,6 +2,7 @@ export interface Service {
   id: string;
   title: string;
   description: string;
+    points?: string[]; 
   image: string;
   gradient: string;
 }
