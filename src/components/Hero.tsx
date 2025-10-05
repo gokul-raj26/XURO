@@ -86,8 +86,12 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
           variants={textVariants}
         >
-          We craft immersive digital experiences that push the boundaries of creativity and technology.
-          From stunning web designs to cutting-edge applications, we bring your vision to life.
+                At Xuro Creative Labs, we transform bold ideas 
+        into powerful digital experiences. 
+        We’re your full-stack creative partner — 
+        combining code, design, and strategy 
+        to bring your vision to life.
+
         </motion.p>
 
         {/* CTA Buttons */}
@@ -118,7 +122,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get In Touch
+           Start a Project
           </motion.button>
         </motion.div>
       </motion.div>

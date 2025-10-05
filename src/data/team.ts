@@ -2,9 +2,9 @@ export const teamMembers = [
   {
     id: '1',
     name: 'Gokul Raj',
-    role: 'Creative Director',
-    bio: 'Visionary leader with 10+ years in digital design and brand strategy.',
-    avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+    role: 'Founder & CEO',
+    bio: 'Drives Xuro Creative Labs’ vision and strategy. Focused on scaling businesses through innovative technology and creative execution.',
+    avatar: 'Gokul.png',
     social: {
       linkedin: 'https://www.linkedin.com/in/gokulraj-gimzr/',
       twitter: '#',
@@ -15,9 +15,9 @@ export const teamMembers = [
   {
     id: '2',
     name: 'Jayashree',
-    role: 'Lead Developer',
-    bio: 'Full-stack engineer specializing in immersive web experiences and performance optimization.',
-    avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+    role: 'CTO & Tech Lead',
+    bio: 'Leads the development of robust, scalable, and high-performance digital solutions. Specializes in full-stack technologies and system architecture.',
+    avatar: 'ja.png',
     social: {
       linkedin: '#',
       github: '#',
@@ -27,10 +27,10 @@ export const teamMembers = [
   },
   {
     id: '3',
-    name: 'Jordan Kim',
-    role: 'UX Designer',
-    bio: 'Human-centered design advocate creating intuitive and accessible digital experiences.',
-    avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+    name: 'Divakar',
+    role: 'Design & Innovation Lead',
+    bio: 'Blends technology with design to craft seamless digital experiences. Skilled in UI/UX, front-end development, and creative direction that bridges aesthetics with functionality.',
+    avatar: 'diva.png',
     social: {
       linkedin: '#',
       behance: '#',
@@ -38,17 +38,5 @@ export const teamMembers = [
     },
     gradient: 'from-pink-500 to-blue-600',
   },
-  {
-    id: '4',
-    name: 'Divakar',
-    role: 'Motion Designer',
-    bio: 'Animation specialist bringing static designs to life with fluid, purposeful motion.',
-    avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-    social: {
-      linkedin: '#',
-      vimeo: '#',
-      instagram: '#',
-    },
-    gradient: 'from-green-500 to-purple-600',
-  },
+  
 ];

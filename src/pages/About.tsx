@@ -26,8 +26,7 @@ const About: React.FC = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            We are a collective of visionaries, creators, and technologists united by a passion 
-            for crafting digital experiences that transcend the ordinary.
+           We blend technology and creativity to deliver smart, scalable, and striking digital solutions that drive real-world results.
           </p>
         </motion.div>
 
@@ -51,7 +50,7 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                Our Mission
+               Our Mission
               </motion.h2>
               <motion.p
                 className="text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto"
@@ -59,8 +58,9 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                At XURO, we don’t just design,we engineer emotion. Blending creativity, code, and human instinct, we craft digital experiences that don’t just look good, but feel unforgettable. Every click, scroll, and interaction is a chance to spark connection, build trust, and turn brands into stories people remember.
+             To empower brands and individuals with modern design, robust code, and strategies that truly captivate audiences.
               </motion.p>
+              
             </div>
           </div>
         </motion.section>
@@ -94,8 +94,7 @@ const About: React.FC = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              From humble beginnings to industry recognition, discover the milestones 
-              that shaped XURO into the creative powerhouse it is today.
+             From humble beginnings to industry recognition, our journey reflects the growth, grit, and creativity that define Xuro Creative Labs.
             </p>
           </motion.div>
 

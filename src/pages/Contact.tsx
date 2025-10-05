@@ -82,8 +82,8 @@ const handleSubmit = async (e: React.FormEvent) => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: 'Email',
-      value: 'xuroglobal@gmail.com',
-      href: 'mailto:xuroglobal@gmail.com',
+      value: 'xurocreativelabs@gmail.com',
+      href: 'mailto:xurocreativelabs@gmail.com',
     },
     {
       icon: <Phone className="w-6 h-6" />,
