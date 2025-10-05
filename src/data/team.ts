@@ -1,10 +1,14 @@
+import GokulImg from '../assets/Gokul.png';
+import JayashreeImg from '../assets/ja.png';
+import DivakarImg from '../assets/diva.png';
+
 export const teamMembers = [
   {
     id: '1',
     name: 'Gokul Raj',
     role: 'Founder & CEO',
     bio: 'Drives Xuro Creative Labs’ vision and strategy. Focused on scaling businesses through innovative technology and creative execution.',
-    avatar: 'Gokul.png',
+    avatar: GokulImg,
     social: {
       linkedin: 'https://www.linkedin.com/in/gokulraj-gimzr/',
       twitter: '#',
@@ -17,7 +21,7 @@ export const teamMembers = [
     name: 'Jayashree',
     role: 'CTO & Tech Lead',
     bio: 'Leads the development of robust, scalable, and high-performance digital solutions. Specializes in full-stack technologies and system architecture.',
-    avatar: 'ja.png',
+    avatar: JayashreeImg,
     social: {
       linkedin: '#',
       github: '#',
@@ -30,7 +34,7 @@ export const teamMembers = [
     name: 'Divakar',
     role: 'Design & Innovation Lead',
     bio: 'Blends technology with design to craft seamless digital experiences. Skilled in UI/UX, front-end development, and creative direction that bridges aesthetics with functionality.',
-    avatar: 'diva.png',
+    avatar: DivakarImg,
     social: {
       linkedin: '#',
       behance: '#',
