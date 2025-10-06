@@ -25,49 +25,32 @@ const handleSubmit = async (e: React.FormEvent) => {
   setIsSubmitting(true);
 
   try {
-    // Generate current time in IST
-    const currentTime = new Date().toLocaleString("en-IN", {
-      timeZone: "Asia/Kolkata",
-    });
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+    const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-    // Format the message for Telegram with bold labels + emojis
-    const telegramMessage = `
-<b>📩 New Contact Enquiry</b>
-
-<b>👤 Name:</b> ${formData.name}
-<b>📧 Email:</b> ${formData.email}
-<b>💬 Message:</b> ${formData.message}
-<b>⏰ Time:</b> ${currentTime}
-    `;
-
-    // Telegram bot credentials
-    const botToken = "8203246589:AAEGszbNV1wgos1QXg62h50OffZUb_16NdQ";
-    const chatId = "1583741579";
-
-    // Send message to Telegram with notification ON
     const response = await fetch(
-      `https://api.telegram.org/bot${botToken}/sendMessage`,
+      `${supabaseUrl}/functions/v1/send-contact-notification`,
       {
         method: "POST",
         headers: {
+          "Authorization": `Bearer ${supabaseAnonKey}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          chat_id: chatId,
-          text: telegramMessage,
-          parse_mode: "HTML", // allows bold/emoji formatting
-          disable_notification: false, // ensures push notification sound
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
         }),
       }
     );
 
     const result = await response.json();
 
-    if (result.ok) {
+    if (response.ok && result.success) {
       setFormData({ name: "", email: "", message: "" });
-      toast.success("Message sent successfully ", { icon: false });
+      toast.success("Message sent successfully!", { icon: false });
     } else {
-      throw new Error("Failed to send message");
+      throw new Error(result.error || "Failed to send message");
     }
   } catch (error) {
     console.error("Error sending message:", error);
