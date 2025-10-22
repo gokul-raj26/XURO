@@ -13,9 +13,9 @@ const Showcase: React.FC = () => {
   const projects: Project[] = [
     {
       id: '1',
-      title: 'E-Commerce Platform',
+      title: 'Student Portfolio',
       category: 'Web Development',
-      description: 'A modern e-commerce platform with advanced features and seamless user experience.',
+      description: 'A modern Portfolio for student with advanced features and seamless user experience.',
       image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       link: 'https://gokul-raj26.github.io/Portfolio/#',

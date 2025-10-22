@@ -20,7 +20,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
     { id: 'about', label: 'Who We Are' },
     { id: 'services', label: 'Solutions' },
     { id: 'showcase', label: 'Highlights' },
-    { id: 'testimonials', label: 'Results' },
+     // Removed the  testimonial page   due to client 
+        /* { id: 'testimonials', label: 'Results' }, */
     { id: 'contact', label: 'Connect' },
   ];
 
