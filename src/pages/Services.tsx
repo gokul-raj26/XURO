@@ -4,7 +4,7 @@ import ServiceCard from '../components/ServiceCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Service } from '../types';
 import buildlab from '../assets/Buildlab.mp4';
-import designlab from '../assets/Designlab.mp4';
+import designlab from '../assets/designlab.mp4';
 import growthlab from '../assets/growthlab.mp4';
 
 
