@@ -21,7 +21,7 @@ export const useTypewriter = (texts: string[], options: Options = {}) => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
     const currentText = texts[currentIndex];
 
     if (isDeleting) {

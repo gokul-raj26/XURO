@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 import ServiceCard from '../components/ServiceCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Service } from '../types';
-import logoDesignImg from '../assets/logo design.jpg';
-import mobileAppImg from '../assets/mobile app.jpg';
-import productImg from '../assets/product.jpg';
-import trainingImg from '../assets/traings.jpg';
-import uiDesignImg from '../assets/UI-design-process-steps.jpg';
-import webDevImg from '../assets/webdev.jpg';
+import buildlab from '../assets/Buildlab.mp4';
+import designlab from '../assets/Designlab.mp4';
+import growthlab from '../assets/growthlab.mp4';
+
 
 
 const Services: React.FC = () => {
@@ -16,88 +14,43 @@ const Services: React.FC = () => {
 
   const services: Service[] = [
     {
-      id: 'logo-design',
-     title: 'Branding & Visual Design',
-    description: 'Crafting strong brand identities and creative visual assets that communicate your business vision effectively.',
+      id: 'design-lab',
+     title: 'Design Lab',
+    description: 'Designing impactful brand identities and user experiences that enhance engagement and drive conversions.',
     points: [
-      "Custom Logo Design",
-      "Corporate & Minimalist Branding",
-      "Creative Graphic Design (Posters, Flyers, Brochures)",
-      "Marketing & Social Media Assets",
-      "Brand Guidelines & Style Systems"
+      "Brand Identity & Logo Design",
+      "UI/UX Design & Prototyping",
+      "Creative Assets (Ads, Social Media, Marketing)",
+      "Design Systems & Guidelines",
     ],
-      image: logoDesignImg,
+      video: designlab,
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      id: 'web-design',
-      title: 'UI/UX & Web Design',
-    description: 'Designing intuitive, conversion-driven digital experiences with responsive layouts and modern design systems.',
+      id: 'build-lab',
+      title: 'Build Lab',
+    description: 'Building scalable, high-performance digital products that streamline operations and accelerate business growth.',
     points: [
-      "Wireframing & Prototyping",
-      "Responsive Website Design",
-      "Interactive UI Components",
-      "Design Systems & UI Kits",
-      "Usability & Accessibility Optimization"
+      "Web Application Development",
+      "Mobile App Development (iOS & Android)",
+      "API & Backend Integration",
+      "SaaS, CRM & Dashboard Development",
     ],
-      image: uiDesignImg,
+      video: buildlab,
       gradient: 'from-purple-500 to-blue-500',
     },
     {
-      id: 'web-development',
-      title: 'Web Development',
-    description: 'Developing scalable, secure, and high-performance websites tailored to business goals with modern technologies.',
+      id: 'growth-lab',
+      title: 'Growth Lab',
+    description: 'Driving brand visibility and customer acquisition through content, media production, and strategic marketing.',
     points: [
-      "Custom Web Development",
-      "Single & Multi-Page Applications",
-      "Interactive Web Experiences",
-      "Enterprise & Corporate Websites",
-      "Cross-browser Compatibility"
+     "Content Creation (Reels & Short-form)",
+      "Video Production & Editing",
+      "Social Media Growth Strategy",
+      "Consulting & Training"
     ],
-      image:webDevImg,
+       video: growthlab,
       gradient: 'from-pink-500 to-purple-500',
-    },
-    {
-      id: 'product-photography',
-    title: 'Creative Media Production',
-    description: 'Delivering high-quality photography and video content to enhance brand storytelling and digital presence.',
-    points: [
-      "Product & Lifestyle Photography",
-      "Professional Photo Editing & Retouching",
-      "Corporate & Promotional Videos",
-      "Social Media Short-form Content",
-      "Motion Graphics & VFX"
-    ],
-      image: productImg,
-      gradient: 'from-green-500 to-blue-500',
-    },
-     {
-      id: 'training-programs',
-     title: 'Training & Consulting',
-    description: 'Providing hands-on training programs and expert consulting to help individuals and businesses grow digitally.',
-    points: [
-      "Web & App Development Training",
-      "UI/UX & Design Workshops",
-      "Photography & Editing Sessions",
-      "Digital Marketing Strategy Consulting",
-      "End-to-end Project Mentorship"
-    ],
-      image:trainingImg,
-      gradient: 'from-indigo-500 to-purple-500',
-    },
-    {
-      id: 'Mobile App-Development',
-    title: 'Mobile App Development',
-    description: 'Building cross-platform and native mobile apps with optimized performance and seamless user experiences.',
-    points: [
-      "iOS & Android Applications",
-      "Cross-platform Apps (Flutter / React Native)",
-      "API & Database Integration",
-      "Mobile-first UI/UX Implementation",
-      "App Store Deployment & Maintenance"
-    ],
-     image: mobileAppImg,
-      gradient: 'from-indigo-500 to-purple-500',
     },
   ];
 
@@ -117,8 +70,7 @@ const Services: React.FC = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            From concept to completion, we provide comprehensive digital solutions 
-            that drive results and exceed expectations
+            From idea to execution - we design, build, and scale digital products.
           </p>
         </motion.div>
 

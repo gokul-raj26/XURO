@@ -36,11 +36,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
         whileHover={{ scale: 1.05 }}
         transition={{ type: 'spring', stiffness: 300 }}
       >
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
-        />
+     {service.video ? (
+  <video
+    src={service.video}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-500"
+  />
+) : (
+  <img
+    src={service.image}
+    alt={service.title}
+    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
+  />
+)}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </motion.div>
 

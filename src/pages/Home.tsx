@@ -4,9 +4,9 @@ import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Service } from '../types';
-import mobileAppImg from '../assets/mobile app.jpg';
-import uiDesignImg from '../assets/UI-design-process-steps.jpg';
-import webDevImg from '../assets/webdev.jpg';
+import mobileAppImg from '../assets/editing.mp4';
+import uiDesignImg from '../assets/website.mp4';
+import webDevImg from '../assets/website.mp4';
 
 
 interface HomeProps {
@@ -21,21 +21,21 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       id: 'web-design',
       title: 'Web Design',
       description: 'Stunning, user-centric designs that captivate and convert',
-      image: uiDesignImg ,
+      video: uiDesignImg ,
       gradient: 'from-blue-500 to-purple-600',
     },
     {
       id: 'web-development',
       title: 'Web Development',
       description: 'Cutting-edge web applications built with modern technologies',
-      image: webDevImg,
+     video: webDevImg,
       gradient: 'from-purple-500 to-pink-600',
     },
     {
       id: 'app-development',
       title: 'App Development',
       description: 'Native and cross-platform mobile applications',
-      image: mobileAppImg,
+      video: mobileAppImg,
       gradient: 'from-pink-500 to-blue-600',
     },
   ];

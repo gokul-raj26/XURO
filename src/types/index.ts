@@ -3,7 +3,8 @@ export interface Service {
   title: string;
   description: string;
     points?: string[]; 
-  image: string;
+    video?: string;
+  image?: string;
   gradient: string;
 }
 
